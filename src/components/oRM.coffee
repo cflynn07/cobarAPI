@@ -64,7 +64,7 @@ exportObj =
     # Use the following line to export your ORM objects to the client side to share validation rules (useful)
     ###
     #Write to JSON
-    fs.writeFileSync GLOBAL.appRoot + '../client/config/clientOrmShare.json', JSON.stringify(exportModels)
+    fs.writeFileSync GLOBAL.appRoot + 'config/clientOrmShare.json', JSON.stringify(exportModels)
 
     for modelName, relations of @relationships
       for relObject in relations

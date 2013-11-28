@@ -16,6 +16,8 @@ clean-docs:
 
 build:
 	coffee -o ./build/ -c ./src/
+	mkdir -p ./build/views/
+	cp ./src/views/* ./build/views/
 	cp ./src/package.json ./build/package.json && \
   cd ./build/ && npm install
 
@@ -24,6 +26,9 @@ build-watch:
 
 test:
 	nodeunit test/refix.js
+
+run:
+	cd ./build/ && node server.js
 
 dist: clean init docs build test
 
